@@ -5,7 +5,7 @@ import java.util.Arrays;
 import java.util.List;
 
 public class arrayWithStackOperations {
-    public static List<String> buildArray(int[] target, int n) {
+    public static List<String> buildArray1(int[] target, int n) {
         int[] stream_data = new int[n];
         List<String> result = new ArrayList<String>();
         int last_target_ele=target[target.length-1];
@@ -30,6 +30,22 @@ public class arrayWithStackOperations {
             if(num==-1){
                 break;
             }
+        }
+        return result;
+
+    }
+    public static List<String> buildArray(int[] target, int n) {
+        List<String> result = new ArrayList<>();
+        int current = 1;  // next number in the stream
+
+        for (int t : target) {
+            while (current < t) {
+                result.add("Push");
+                result.add("Pop");
+                current++;
+            }
+            result.add("Push");
+            current++;
         }
         return result;
 
