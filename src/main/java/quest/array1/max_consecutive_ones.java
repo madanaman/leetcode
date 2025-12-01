@@ -1,3 +1,5 @@
+package quest.array1;
+
 public class max_consecutive_ones {
     public static int findMaxConsecutiveOnes(int[] nums) {
         int max_counter = 0;
